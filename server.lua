@@ -5,8 +5,7 @@ http.createServer(function (req, res)
 
   local tbl = { greeting = "Hello World!" }
   local body = json.stringify( tbl )
---  local body = "Hello world\n"
-  res:setHeader("Content-Type", "text/plain")
+  res:setHeader("Content-Type", "application/json")
   res:setHeader("Content-Length", #body)
   res:finish(body)
 end):listen(1337, '127.0.0.1')
